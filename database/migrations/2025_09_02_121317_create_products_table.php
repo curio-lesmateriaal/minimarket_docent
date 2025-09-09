@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image_url')->nullable();
             $table->enum('status', ['Nieuwstaat', 'Tweedehands'])->default('Nieuwstaat');
 
-            $table->foreignId('verkocht_aan')->nullable()->references('id')->on('users');
+            $table->foreignId('sold_to')->nullable()->references('id')->on('users');
 
 
             $table->timestamps();

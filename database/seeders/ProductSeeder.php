@@ -14,7 +14,6 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         $faker = \Faker\Factory::create();
-
         for ($i = 0; $i < 10000; $i++) {
             DB::table('products')->insert([
                 'name' => $faker->word,
@@ -26,9 +25,5 @@ class ProductSeeder extends Seeder
                 'updated_at' => now(),
             ]);
         }
-
-
-
-
     }
 }

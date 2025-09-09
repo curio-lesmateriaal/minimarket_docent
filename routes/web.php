@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 Route::get('/', function () {
-    return view('home');
+    $products = Product::inRandomOrder()->take(100)->get();
+    return view('home', ['products' => $products]);
 })->name('home');
 
 Route::get('/aanbod', function () {
