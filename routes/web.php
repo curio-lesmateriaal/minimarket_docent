@@ -1,21 +1,14 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Route::get('/', function () {
-    $products = Product::inRandomOrder()->take(100)->get();
-    return view('home', ['products' => $products]);
-})->name('home');
+Route::get('/', [PagesController::class, 'home'])->name('home');
+Route::get('/aanbod', [PagesController::class, 'aanbod'])->name('aanbod');
+Route::get('/recent', [PagesController::class, 'recent'])->name('recent');
 
-Route::get('/aanbod', function () {
-    return view('aanbod');
-})->name('aanbod');
-
-Route::get('/recent', function () {
-    return view('recent');
-})->name('recent');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
