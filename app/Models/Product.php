@@ -17,4 +17,12 @@ class Product extends Model
         'status',
         'sold_to',
     ];
+
+    public function buyer() {
+        return $this->belongsTo(User::class, 'sold_to');
+    }
+
+    public function bids() {
+        return $this->hasMany(Bid::class);
+    }
 }

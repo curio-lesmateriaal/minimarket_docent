@@ -9,6 +9,7 @@
                     <th class="px-6 py-3 text-left text-sm font-semibold">Sold To</th>
                     <th class="px-6 py-3 text-left text-sm font-semibold">Created At</th>
                     <th class="px-6 py-3 text-left text-sm font-semibold">Status</th>
+                    <th class="px-6 py-3 text-left text-sm font-semibold"></th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
@@ -22,6 +23,9 @@
                         <span
                             class="px-3 py-1 text-xs font-semibold rounded-full @if($product->status == 'Nieuwstaat') bg-green-100 text-green-700 @else bg-red-100 text-red-700 @endif">{{ $product->status }}
                         </span>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-gray-600">
+                        <a href="" class="text-blue-600 hover:underline ms-2">Biedingspagina</a>
                     </td>
                 </tr>
                 @endforeach

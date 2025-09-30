@@ -35,7 +35,11 @@
 
     <div>
         <label class="block text-sm font-medium">Verkocht aan (user ID)</label>
-        <input type="number" name="sold_to" value="{{ old('sold_to', $product->sold_to ?? '') }}" class="w-full border rounded px-3 py-2">
+        <select name="sold_to" class="w-full border rounded px-3 py-2">
+            @foreach ($users as $user)
+                <option value="{{ $user->id }}" {{ $product->sold_to == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
+            @endforeach
+        </select>
         @error('sold_to')<div class="text-red-600 text-sm mt-1">{{ $message }}</div>@enderror
     </div>
 </div>

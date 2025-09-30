@@ -19,7 +19,7 @@
                     <td class="border border-neutral-300 px-4 py-2 dark:border-neutral-600">€ {{ number_format($product->start_price, 2) }}</td>
                     <td class="border border-neutral-300 px-4 py-2 dark:border-neutral-600">
                         @if ($product->sold_to)
-                            {{ $product->sold_to }}
+                            {{ $product->buyer->name }}
                         @else
                             <span class="text-gray-500 italic">Niet verkocht</span>
                         @endif

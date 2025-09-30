@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BiddingController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use App\Models\Product;
@@ -10,12 +11,14 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/aanbod', [PagesController::class, 'aanbod'])->name('aanbod');
 Route::get('/recent', [PagesController::class, 'recent'])->name('recent');
 
-
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
+
+    Route::get('product/{product}', [BiddingController::class, 'show'])->name('bidding.show');
+
     Route::redirect('settings', 'settings/profile');
 
     Route::resource('products', ProductsController::class);

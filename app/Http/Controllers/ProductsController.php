@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -58,7 +59,8 @@ class ProductsController extends Controller
     public function edit(string $id)
     {
         $product = Product::findOrFail($id);
-        return view('products.edit', compact('product'));
+        $users = User::all();
+        return view('products.edit', compact('product', 'users'));
     }
 
     /**
