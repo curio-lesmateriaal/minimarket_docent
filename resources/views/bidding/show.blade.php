@@ -19,7 +19,7 @@
                     name="amount"
                     id="amount"
                     placeholder="Voer je bod in"
-                    class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
+                    class="w-full rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
                 >
             </div>
             <button
