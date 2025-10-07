@@ -11,8 +11,7 @@
             <p class="text-sm text-gray-500">Updated: {{ $product->updated_at->format('d M Y, H:i') }}</p>
         </div>
 
-        <form  class="space-y-4">
-            @csrf
+
             <div>
                 <label for="amount" class="block text-sm font-medium text-gray-700 mb-1">Your Bid</label>
                 <input
@@ -29,6 +28,5 @@
             >
                 Place Bid
             </button>
-        </form>
-    </div>
+
 </x-layouts.page>
