@@ -58,4 +58,13 @@ class User extends Authenticatable
             ->map(fn ($word) => Str::substr($word, 0, 1))
             ->implode('');
     }
+
+    public function products() {
+        return $this->hasMany(Product::class, 'sold_to');
+    }
+
+    public function bids() {
+        return $this->hasMany(Bid::class, 'user_id');
+    }
+
 }
